@@ -17,7 +17,7 @@ input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
       document.getElementById("addtodo").click();
     }
-  });
+});
 
 // CHIAMO FUNZIONE AL CLICK DEL BOTTONE REMOVE
 remAll.onclick = () => {
@@ -57,6 +57,9 @@ function addItem(targetItem) {
 
     // APPENDO LA LI ALLA LISTA
     targetItem.appendChild(li);
+    localStorage.setItem('todoList',list.innerHTML );
+    //console.log(localStorage);
+    
 
 }
     
@@ -64,7 +67,10 @@ function addItem(targetItem) {
 function elimina(item) {
     var parent = item.parentElement;
     parent.parentElement.removeChild(parent);
+    localStorage.setItem('todoList',list.innerHTML );
 }
+
+list.innerHTML = localStorage.getItem('todoList');
 
 // RIMUOVO TUTTI GLI ELEMENTI DELLA LISTA
 remAll.onclick = function() {
