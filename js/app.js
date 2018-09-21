@@ -75,6 +75,7 @@ list.innerHTML = localStorage.getItem('todoList');
 // RIMUOVO TUTTI GLI ELEMENTI DELLA LISTA
 remAll.onclick = function() {
     lista.innerHTML = '';
+    localStorage.setItem('todoList',list.innerHTML );
 };
 
 
