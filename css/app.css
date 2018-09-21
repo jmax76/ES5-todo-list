@@ -57,3 +57,13 @@ button#remAll {
 button#remAll:hover {
   background-color: #c95a52;
 }
+
+button.elimina {
+  padding: 5px;
+  font-size: 13px;
+  margin-left: 10px;
+  font-weight: 700;
+  background: #E0645C;
+  position: relative;
+  top: -7px;
+}

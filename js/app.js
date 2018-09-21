@@ -29,29 +29,35 @@ function addItem(targetItem) {
     // APPENDO IN NUOVO ELEMENTO TESTO ALLA LI
     li.appendChild(content);
     li.appendChild(remBut);
-
-    remBut.className = 'elimina';
-    remBut.innerHTML = ' Ok inserito';
-    remBut.setAttribute('onclick', 'elimina(this);');
-
+    
+    
     // CONTROLLO CHE L'INPUT NON SIA VUOTO
     if (testoItem.split(' ').join('').length === 0) {
         alert('non hai compilato il campo');
         console.log('non hai compilato il campo');
         return false;
-    }    
+    } 
+
+    remBut.className = 'elimina';
+    remBut.innerHTML = ' Elimina';
+    remBut.setAttribute('onclick', 'elimina(this);');
+
+       
 
     // APPENDO LA LI ALLA LISTA
     targetItem.appendChild(li);
 
-    // FUNZIONE PER ELIMINARE ITEM DALLA LISTA
-    function elimina(item) {
-        var parent = item.parentElement;
-        parent.parentElement.removeChild(parent);
-    }
-
-    // RIMUOVO TUTTI GLI ELEMENTI DELLA LISTA
-    remAll.onclick = function() {
-        lista.innerHTML = '';
-    };
 }
+    
+// FUNZIONE PER ELIMINARE ITEM DALLA LISTA
+function elimina(item) {
+    var parent = item.parentElement;
+    parent.parentElement.removeChild(parent);
+}
+
+// RIMUOVO TUTTI GLI ELEMENTI DELLA LISTA
+remAll.onclick = function() {
+    lista.innerHTML = '';
+};
+
+
