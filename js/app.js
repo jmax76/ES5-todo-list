@@ -10,6 +10,15 @@ addtodo.onclick = () => {
     addItem(lista);
 };
 
+// AGGIUNGO TRIGGER ENTER
+var input = document.getElementById("instodo");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      document.getElementById("addtodo").click();
+    }
+  });
+
 // CHIAMO FUNZIONE AL CLICK DEL BOTTONE REMOVE
 remAll.onclick = () => {
     console.log("Hai cliccato il bottone "+remAll.id)
@@ -38,6 +47,8 @@ function addItem(targetItem) {
         return false;
     } 
 
+
+    // AGGIUNTA DEL PULSTANTE ELIMINA SU OGNI ITEM
     remBut.className = 'elimina';
     remBut.innerHTML = ' Elimina';
     remBut.setAttribute('onclick', 'elimina(this);');
