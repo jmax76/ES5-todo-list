@@ -67,3 +67,8 @@ button.elimina {
   position: relative;
   top: -7px;
 }
+.invisible {
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+}
