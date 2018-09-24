@@ -44,9 +44,9 @@ window.addEventListener('load', function handle() {
 
 	listaAttiva.addEventListener('click', function(e) {
 		var a,
-            target = e.target;
-            
-		target.classList.add('completato');
+		    target = e.target;
+        
+        target.classList.add('completato');
 
 		for (a = 0; a < stato.attivo.length; a++) {
 			if (target.innerHTML === stato.attivo[a]) {
