@@ -7,7 +7,8 @@ var stato = {
 // LOCAL STORAGE GET
 var data = localStorage.getItem('data');
 if (data) {
-	stato = JSON.parse(data);
+    stato = JSON.parse(data);
+    //console.log(stato);
 }
 
 window.addEventListener('load', function handle() {
@@ -16,7 +17,8 @@ window.addEventListener('load', function handle() {
 	    listaCompletata = document.querySelector('ul.lista-completata'),
 	    BloccoCompletato = document.querySelector('.blocco-completato'),
 	    input = document.querySelector('#instodo'),
-	    button = document.querySelector('button');
+        button = document.querySelector('button'),
+        remAll = document.querySelector('#remAll');
 
 	function aggiorna() {
 		var i,
@@ -53,7 +55,7 @@ window.addEventListener('load', function handle() {
 				stato.completato.splice(1, 0, stato.attivo[a]);
 				stato.attivo.splice(a, 1);
 				localStorage.setItem('data', JSON.stringify(stato));
-                console.log(stato);
+                //console.log(stato);
                 aggiorna();
 			}
 		}
@@ -66,10 +68,11 @@ window.addEventListener('load', function handle() {
 			stato.attivo.push(text);
 			aggiorna();
             localStorage.setItem('data', JSON.stringify(stato));
-            console.log(stato);
+            //console.log(stato);
 			input.value = '';
 		}
-	});
+    });
+    
 
 	input.addEventListener('keydown', function handleKeydown(e) {
 		var text = input.value;
@@ -78,7 +81,7 @@ window.addEventListener('load', function handle() {
 			if (text !== '') {
 				stato.attivo.push(text);
                 localStorage.setItem('data', JSON.stringify(stato));
-                console.log(stato);
+                //console.log(stato);
 				aggiorna();
 				input.value = '';
 			}
